@@ -22,7 +22,8 @@ class TestScraperName:
     @pytest.fixture(scope='function')
     def downloader(self):
         class Response:
-            def json(self):
+            @staticmethod
+            def json():
                 pass
 
         class Download:
