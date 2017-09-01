@@ -30,7 +30,7 @@ def generate_dataset_and_showcase(base_url, downloader, countrydata):
     {
     },
     """
-    title = 'Economic and Social Indicators' #  Example title. Don't include org name or country in title!
+    title = 'Economic and Social Indicators' #  Example title. Don't include organisation name or country in title!
     logger.info('Creating dataset: %s' % title)
     name = 'Organisation indicators for %s' % countrydata['name']  #  Example name which should be unique so include organisation and country
     slugified_name = slugify(name).lower()
