@@ -49,10 +49,10 @@ def generate_dataset_and_showcase(base_url, downloader, countrydata):
 
     resource = {
         'name': title,
-        'format': ,
         'url': ,
         'description':
     }
+    resource.set_file_type('csv')  # set the file type to eg. csv
     dataset.add_update_resource(resource)
 
     showcase = Showcase({
