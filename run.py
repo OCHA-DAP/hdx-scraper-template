@@ -29,17 +29,17 @@ def main():
     # The file should contain username:password based64 encoded. Remember to create it on the ScraperWiki box!
     # If you need to add extra parameters to every url, you can use extra_params_yaml and point to a YAML file with
     # key value pairs. Remember to create it on the ScraperWiki box!
-    downloader = Download(basic_auth_file=join(expanduser("~"), '.scrapernamefile'),
-                          extra_params_yaml=join(expanduser("~"), 'scrapernamefile.yml')
-    countriesdata = get_countriesdata(base_url, downloader)
-    logger.info('Number of datasets to upload: %d' % len(countriesdata))
-    for countrydata in countriesdata:
-        dataset, showcase = generate_dataset_and_showcase(base_url, downloader, countrydata)
-        if dataset:
-            dataset.update_from_yaml()
-            dataset.create_in_hdx()
-            showcase.create_in_hdx()
-            showcase.add_dataset(dataset)
+    with Download(basic_auth_file=join(expanduser("~"), '.scrapernamefile'),
+                  extra_params_yaml=join(expanduser("~"), 'scrapernamefile.yml') as downloader:
+        countriesdata = get_countriesdata(base_url, downloader)
+        logger.info('Number of datasets to upload: %d' % len(countriesdata))
+        for countrydata in countriesdata:
+            dataset, showcase = generate_dataset_and_showcase(base_url, downloader, countrydata)
+            if dataset:
+                dataset.update_from_yaml()
+                dataset.create_in_hdx()
+                showcase.create_in_hdx()
+                showcase.add_dataset(dataset)
 
 if __name__ == '__main__':
     # Remember to create .hdxkey on the ScraperWiki box!
