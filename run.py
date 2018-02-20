@@ -44,7 +44,12 @@ def main():
                 showcase.add_dataset(dataset)
 
 if __name__ == '__main__':
-    # Remember to create .hdxkey on the ScraperWiki box!
-    # It is best to use the HDX Data Team bot's key (https://data.humdata.org/user/luiscape) rather than your own.
-    facade(main, hdx_site='test', project_config_yaml=join('config', 'project_configuration.yml'))
+    # Remember to create .hdxkey on your server eg. the ScraperWiki box!
+    facade(main, hdx_site='test', user_agent='myproject', project_config_yaml=join('config', 'project_configuration.yml'))
+    # HDX: Use facade below replacing xxx in .xxxuseragent.yml eg. .ftsuseragent.yml
+    # HDX: It is best to use the HDX Data Team bot's key (https://data.humdata.org/user/luiscape) rather than your own.
+    # HDX: That file should have a user_agent parameter and an additional one identifying the scraper as internal to HDX.
+    # HDX: Log into ACLED scraperwiki to see what it should contain.
+    # facade(main, hdx_site='test', user_agent_config_yaml = join(expanduser('~'), '.xxxuseragent.yml'), project_config_yaml=join('config', 'project_configuration.yml'))
+
 
