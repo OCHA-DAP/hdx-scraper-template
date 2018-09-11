@@ -30,7 +30,7 @@ For the script to run, you will need to either pass in your HDX API key as a par
 
     hdx_key: "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
     hdx_read_only: false
-    hdx_site: prod
+    hdx_site: test
     
  You will also need to pass in your user agent as a parameter or pass a parameter *user_agent_config_yaml* specifying where your user agent file is located. It should be of the form:
  
