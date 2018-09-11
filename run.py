@@ -44,7 +44,7 @@ def main():
                 showcase.add_dataset(dataset)
 
 if __name__ == '__main__':
-    facade(main, hdx_site='test', hdx_key='xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx', user_agent='myproject', project_config_yaml=join('config', 'project_configuration.yml'))
+    facade(main, hdx_site='test', hdx_key='xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx', user_agent='myorgandproject', project_config_yaml=join('config', 'project_configuration.yml'))
     # HDX: Remember to create .hdx_configuration.yml on your server eg. the ScraperWiki box!
     # HDX: Use facade below creating or adding to .useragents.yml a key (hdxscraper-scrapername) with a Dict as
     # a value, the Dict containing user agent entries.
