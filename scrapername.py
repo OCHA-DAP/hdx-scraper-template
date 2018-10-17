@@ -48,11 +48,11 @@ def generate_dataset_and_showcase(base_url, downloader, countrydata):
     dataset.add_country_location()
     dataset.add_tags([])
 
-    resource = {
+    resource = Resource({
         'name': title,
         'url': ,
         'description':
-    }
+    })
     resource.set_file_type('csv')  # set the file type to eg. csv
     dataset.add_update_resource(resource)
 
