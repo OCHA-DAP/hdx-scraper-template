@@ -11,6 +11,7 @@ Reads ScraperName JSON and creates datasets.
 import logging
 
 from hdx.data.dataset import Dataset
+from hdx.data.resource import Resource
 from hdx.data.hdxobject import HDXError
 from hdx.data.showcase import Showcase
 from hdx.utilities.location import Location
