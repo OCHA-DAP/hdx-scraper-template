@@ -9,6 +9,7 @@ from os.path import join, expanduser
 
 from hdx.hdx_configuration import Configuration
 from hdx.utilities.downloader import Download
+from hdx.utilities.path import temp_dir
 
 from scrapername import generate_dataset_and_showcase, get_countriesdata
 
@@ -31,6 +32,9 @@ def main():
     # The file should contain username:password based64 encoded. Remember to create it on the server eg. ScraperWiki box!
     # If you need to add extra parameters to every url, you can use extra_params_yaml and point to a YAML file with
     # key value pairs. Remember to create it on the server!
+    tempdir = temp_dir()
+    # Get temporary folder for any intermediate files
+    # (uses either where TEMP_DIR env var points if it exists or os.gettempdir())
     with Download(basic_auth_file=join(expanduser("~"), '.scrapernamefile'),
                   extra_params_yaml=join(expanduser("~"), 'scrapernamefile.yml') as downloader:
         countriesdata = get_countriesdata(base_url, downloader)
