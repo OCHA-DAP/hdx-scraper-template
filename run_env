@@ -1,6 +1,6 @@
 TEMP_DIR=/srv/tmp
 LOG_FILE_ONLY=true
-USER_AGENT=fts-user-agent
+USER_AGENT=scrapername-user-agent
 HDX_KEY=hdx-key-id
 PREPREFIX=preprefix-id
 #HDX_SITE=test
