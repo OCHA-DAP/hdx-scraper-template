@@ -1,0 +1,1 @@
+# Requirements other than pandas,awesome-slugify and hdx-python-api which are already in the base image
