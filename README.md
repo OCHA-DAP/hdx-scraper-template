@@ -44,3 +44,5 @@ For the script to run, you will need to either pass in your HDX API key as a par
         user_agent: MY_USER_AGENT2
 
  Note for HDX scrapers: there is a universal .useragents.yml file you should use.
+
+ Alternatively, you can set up environment variables eg. for production runs: USER_AGENT, HDX_KEY, HDX_SITE, BASIC_AUTH, EXTRA_PARAMS, TEMP_DIR, LOG_FILE_ONLY
