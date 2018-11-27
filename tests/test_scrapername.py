@@ -9,6 +9,7 @@ from os.path import join
 import pytest
 from hdx.hdx_configuration import Configuration
 from hdx.hdx_locations import Locations
+from hdx.utilities.path import temp_dir
 from scrapername import generate_dataset_and_showcase, get_countriesdata
 
 
@@ -44,11 +45,12 @@ class TestScraperName:
         assert countriesdata == [TestScraperName.countrydata]
 
     def test_generate_dataset_and_showcase(self, configuration, downloader):
-        dataset, showcase = generate_dataset_and_showcase(downloader, TestScraperName.countrydata)
-        assert dataset == {...}
+        with temp_dir('scrapername') as folder:  # if you need a temporary folder that will be deleted
+            dataset, showcase = generate_dataset_and_showcase(downloader, folder, TestScraperName.countrydata)
+            assert dataset == {...}
 
-        resources = dataset.get_resources()
-        assert resources == [...]
+            resources = dataset.get_resources()
+            assert resources == [...]
 
-        assert showcase == {...}
+            assert showcase == {...}
 
