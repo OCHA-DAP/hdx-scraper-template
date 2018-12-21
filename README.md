@@ -10,11 +10,11 @@ using a command in the file "crontab".
 Collector designed to collect ScraperName datasets from the [ScraperName](http://) website and to automatically register datasets on the [Humanitarian Data Exchange](http://data.humdata.org/) project.
 
 For full scrapers following this template see:
-[ACLED](https://github.com/OCHA-DAP/hdxscraper-acled-africa),
-[FTS](https://github.com/OCHA-DAP/hdxscraper-fts),
-[WHO](https://github.com/OCHA-DAP/hdxscraper-who),
-[World Bank](https://github.com/OCHA-DAP/hdxscraper-worldbank),
-[WorldPop](https://github.com/OCHA-DAP/hdxscraper-worldpop)
+[ACLED](https://github.com/OCHA-DAP/hdx-scraper-acled-africa),
+[FTS](https://github.com/OCHA-DAP/hdx-scraper-fts),
+[WHO](https://github.com/OCHA-DAP/hdx-scraper-who),
+[World Bank](https://github.com/OCHA-DAP/hdx-scraper-worldbank),
+[WorldPop](https://github.com/OCHA-DAP/hdx-scraper-worldpop)
 
 For a scraper that also creates datasets disaggregated by indicator (not just country) and
 reads metadata from a Google spreadsheet exported as csv, see:
