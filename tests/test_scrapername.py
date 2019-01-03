@@ -9,6 +9,7 @@ from os.path import join
 import pytest
 from hdx.hdx_configuration import Configuration
 from hdx.hdx_locations import Locations
+from hdx.location.country import Country
 from hdx.utilities.path import temp_dir
 from scrapername import generate_dataset_and_showcase, get_countriesdata
 
@@ -21,6 +22,7 @@ class TestScraperName:
         Configuration._create(hdx_read_only=True, user_agent='test',
                               project_config_yaml=join('tests', 'config', 'project_configuration.yml'))
         Locations.set_validlocations([{'name': 'afg', 'title': 'Afghanistan'}])  # add locations used in tests
+        Country.countriesdata(False)
 
     @pytest.fixture(scope='function')
     def downloader(self):
