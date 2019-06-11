@@ -18,8 +18,6 @@ from hdx.facades import logging_kwargs
 logging_kwargs['smtp_config_yaml'] = join('config', 'smtp_configuration.yml')
 
 from hdx.facades.simple import facade
-# Use facade below instead of one above if installing scraper on ScraperWiki
-#from hdx.facades.hdx_scraperwiki import facade
 
 logger = logging.getLogger(__name__)
 
