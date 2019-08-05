@@ -11,6 +11,7 @@ from hdx.hdx_configuration import Configuration
 from hdx.hdx_locations import Locations
 from hdx.location.country import Country
 from hdx.utilities.path import temp_dir
+from hdx.data.vocabulary import Vocabulary
 from scrapername import generate_dataset_and_showcase, get_countriesdata
 
 
@@ -23,6 +24,8 @@ class TestScraperName:
                               project_config_yaml=join('tests', 'config', 'project_configuration.yml'))
         Locations.set_validlocations([{'name': 'afg', 'title': 'Afghanistan'}])  # add locations used in tests
         Country.countriesdata(False)
+        Vocabulary._tags_dict = True
+        Vocabulary._approved_vocabulary = {'tags': [{'name': 'hxl'}, {'name': 'xxx'}, {'name': 'yyy'}], 'id': '4e61d464-4943-4e97-973a-84673c1aaa87', 'name': 'approved'}
 
     @pytest.fixture(scope='function')
     def downloader(self):
