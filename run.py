@@ -52,7 +52,6 @@ if __name__ == '__main__':
     # a value, the Dict containing user agent entries.
     # HDX: It is best to use the HDX Data Team bot's key (https://data.humdata.org/user/luiscape) rather than your own.
     # HDX: That file should have a user_agent parameter and an additional one identifying the scraper as internal to HDX.
-    # HDX: Log into ACLED scraperwiki to see what it should contain.
     # facade(main, user_agent_config_yaml=join(expanduser('~'), '.useragents.yml'), user_agent_lookup='hdxscraper-scrapername', project_config_yaml=join('config', 'project_configuration.yml'))
 
 
