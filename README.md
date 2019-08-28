@@ -4,8 +4,7 @@ Replace scrapername everywhere with your scraper's name eg. worldbank
 Replace ScraperName everywhere with your scraper's name eg. World Bank
 Look for xxx and ... and replace add text accordingly.
 
-Scrapers can be installed on QuickCode and set up to run on a schedule 
-using a command in the file "crontab". 
+Scrapers can be installed on Jenkins and set up to run on a schedule. 
 
 Collector designed to collect ScraperName datasets from the [ScraperName](http://) website and to automatically register datasets on the [Humanitarian Data Exchange](http://data.humdata.org/) project.
 
