@@ -1,5 +1,5 @@
 # development docker-compose file
-version: '2.1'
+version: '0.1'
 
 services:
 
