@@ -43,6 +43,7 @@ def main():
                 if dataset:
                     dataset.update_from_yaml()
                     dataset.create_in_hdx()
+                    dataset.generate_resource_view()
                     showcase.create_in_hdx()
                     showcase.add_dataset(dataset)
 
