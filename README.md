@@ -7,10 +7,7 @@ Look for xxx and ... and replace add text accordingly.
 ## Testing
 
 Scrapers can be tested locally in a Python virtualenv which can be set up by running
-./setup.sh and run with ./run.sh. It is recommended to set up 
-[Travis](https://travis-ci.com/) for running tests on check in (using the Travis website's
-simple UI) and to set up [coveralls](https://coveralls.io/) for ensuring that tests
-cover the majority of your code.
+./setup.sh and run with ./run.sh. 
 
 ## Deployment
 
@@ -27,6 +24,21 @@ repository's UI. You can also set up the cron schedule.
 ### Jenkins
 docker-compose.yml, docker-requirements.yml, Dockerfile, run-dev.sh, run-once-dev.sh and run_env
 are only needed for Jenkins. (.github/workflows/python-package.yml is not used.) 
+
+## Best Practices
+It is highly recommended to have a README.md that details what your script does, from where it
+obtains data, how to run it, what resources it uses (eg. CPU, memory, disk, network) and what 
+environment variables are needed. An example is shown below the heading "Text for Scraper's 
+README.md below" 
+
+It is a good idea to set up [Travis](https://travis-ci.com/) for running tests on check in 
+(using the Travis website's simple UI) and to set up [coveralls](https://coveralls.io/) 
+in the website UI to ensure that tests cover the majority of your code.
+
+It is very helpful to comment your code appropriately especially things that you think might
+confuse someone looking at your code for the first time.
+
+## Examples
 
 For a full scraper following this template for GitHub Actions see:
 [OAD](https://github.com/OCHA-DAP/hdx-scraper-covid-viz)
