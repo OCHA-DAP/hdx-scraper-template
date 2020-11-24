@@ -1,14 +1,37 @@
-### Template Usage
+# Template Usage
 
 Replace scrapername everywhere with your scraper's name eg. worldbank
 Replace ScraperName everywhere with your scraper's name eg. World Bank
 Look for xxx and ... and replace add text accordingly.
 
-Scrapers can be installed on Jenkins and set up to run on a schedule. 
+## Testing
 
-Collector designed to collect ScraperName datasets from the [ScraperName](http://) website and to automatically register datasets on the [Humanitarian Data Exchange](http://data.humdata.org/) project.
+Scrapers can be tested locally in a Python virtualenv which can be set up by running
+./setup.sh and run with ./run.sh. It is recommended to set up 
+[Travis](https://travis-ci.com/) for running tests on check in (using the Travis website's
+simple UI) and to set up [coveralls](https://coveralls.io/) for ensuring that tests
+cover the majority of your code.
 
-For full scrapers following this template see:
+## Deployment
+
+Scrapers can either be installed on GitHub Actions or Jenkins. In either case, they can be 
+set up to run on a schedule. For scripts that run for more than 6 hours and/or for which
+resuming failed runs in important, Jenkins must be used.
+
+### GitHub Actions 
+Uses the .github/workflows/python-package.yml file. Set up the environment variables to be 
+passed to your script in that file mapping them from secrets configured in the GitHub 
+repository's UI. You can also set up the cron schedule.
+(The files listed under Jenkins below are not used.)
+
+### Jenkins
+docker-compose.yml, docker-requirements.yml, Dockerfile, run-dev.sh, run-once-dev.sh and run_env
+are only needed for Jenkins. (.github/workflows/python-package.yml is not used.) 
+
+For a full scraper following this template for GitHub Actions see:
+[OAD](https://github.com/OCHA-DAP/hdx-scraper-covid-viz)
+
+For full scrapers following this template for Jenkins see:
 [ACLED](https://github.com/OCHA-DAP/hdx-scraper-acled-africa),
 [FTS](https://github.com/OCHA-DAP/hdx-scraper-fts),
 [WHO](https://github.com/OCHA-DAP/hdx-scraper-who),
@@ -19,8 +42,14 @@ For a scraper that also creates datasets disaggregated by indicator (not just co
 reads metadata from a Google spreadsheet exported as csv, see:
 [IDMC](https://github.com/OCHA-DAP/hdxscraper-idmc)
 
+## Text for Scraper's README.md below
+
 ### Collector for ScraperName's Datasets
 [![Build Status](https://travis-ci.org/OCHA-DAP/hdxscraper-scrapername.svg?branch=master&ts=1)](https://travis-ci.org/OCHA-DAP/hdxscraper-scrapername) [![Coverage Status](https://coveralls.io/repos/github/OCHA-DAP/hdxscraper-scrapername/badge.svg?branch=master&ts=1)](https://coveralls.io/github/OCHA-DAP/hdxscraper-scrapername?branch=master)
+
+Collector designed to collect ScraperName datasets from the [ScraperName](http://) website 
+and to automatically register datasets on the 
+[Humanitarian Data Exchange](http://data.humdata.org/) project.
 
 ### Usage
 python run.py
