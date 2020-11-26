@@ -3,9 +3,9 @@
 name: Python package
 
 on:
-  workflow_dispatch: # add run button in GitHub UI
-  schedule: #  Run script according to a cron schedule
-    - cron: "30 14 * * *"
+#  workflow_dispatch: # add run button in GitHub UI
+#  schedule: #  Run script according to a cron schedule
+#    - cron: "30 14 * * *"
 
 jobs:
   build:
