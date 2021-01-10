@@ -31,8 +31,8 @@ obtains data, how to run it, what resources it uses (eg. CPU, memory, disk, netw
 environment variables are needed. An example is shown below the heading "Text for Scraper's 
 README.md below" 
 
-It is a good idea to set up [Travis](https://travis-ci.com/) for running tests on check in 
-(using the Travis website's simple UI) and to set up [coveralls](https://coveralls.io/) 
+It is a good idea to set up GitHub Actions for running tests on check in 
+(using the run-python-tests.yml and the GitHub Actions UI to set up any secrets) and to set up [coveralls](https://coveralls.io/) 
 in the website UI to ensure that tests cover the majority of your code.
 
 It is very helpful to comment your code appropriately especially things that you think might
@@ -41,7 +41,7 @@ confuse someone looking at your code for the first time.
 ## Examples
 
 For a full scraper following this template for GitHub Actions see:
-[OAD](https://github.com/OCHA-DAP/hdx-scraper-covid-viz)
+[OAD](https://github.com/OCHA-DAP/hdx-scraper-scrapername)
 
 For full scrapers following this template for Jenkins see:
 [ACLED](https://github.com/OCHA-DAP/hdx-scraper-acled-africa),
@@ -57,7 +57,7 @@ reads metadata from a Google spreadsheet exported as csv, see:
 ## Text for Scraper's README.md below
 
 ### Collector for ScraperName's Datasets
-[![Build Status](https://travis-ci.org/OCHA-DAP/hdxscraper-scrapername.svg?branch=master&ts=1)](https://travis-ci.org/OCHA-DAP/hdxscraper-scrapername) [![Coverage Status](https://coveralls.io/repos/github/OCHA-DAP/hdxscraper-scrapername/badge.svg?branch=master&ts=1)](https://coveralls.io/github/OCHA-DAP/hdxscraper-scrapername?branch=master)
+[![Build Status](https://github.com/OCHA-DAP/hdx-scraper-scrapername/workflows/build/badge.svg)](https://github.com/OCHA-DAP/hdx-scraper-scrapername/actions?query=workflow%3Abuild) [![Coverage Status](https://coveralls.io/repos/github/OCHA-DAP/hdx-scraper-scrapername/badge.svg?branch=master&ts=1)](https://coveralls.io/github/OCHA-DAP/hdx-scraper-scrapername?branch=master)
 
 Collector designed to collect ScraperName datasets from the [ScraperName](http://) website 
 and to automatically register datasets on the 
