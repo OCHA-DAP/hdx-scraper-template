@@ -26,14 +26,15 @@ def get_countries(base_url, downloader):
     return jsonresponse['countries_key']
 
 
-def generate_dataset_and_showcase(base_url, downloader, folder, countrydata):
+def generate_dataset_and_showcase(base_url, downloader, folder, country):
     """Parse json of the form:
     {
     },
     """
-    title = '%s - Economic and Social Indicators' % countrydata['name'] #  Example title. Include country, but not organisation name in title!
+    countryname = country['name']
+    title = '%s - Economic and Social Indicators' % countryname #  Example title. Include country, but not organisation name in title!
     logger.info('Creating dataset: %s' % title)
-    name = 'Organisation indicators for %s' % countrydata['name']  #  Example name which should be unique so can include organisation name and country
+    name = 'Organisation indicators for %s' % countryname  #  Example name which should be unique so can include organisation name and country
     slugified_name = slugify(name).lower()
     ...
     dataset = Dataset({
