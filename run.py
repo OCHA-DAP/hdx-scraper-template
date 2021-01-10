@@ -23,6 +23,10 @@ from hdx.facades.simple import facade
 logger = logging.getLogger(__name__)
 
 
+# HDX only
+# lookup = 'hdx-scraper-scrapername'
+
+
 def main():
     """Generate dataset and create it in HDX"""
 
@@ -46,7 +50,7 @@ def main():
             dataset, showcase = generate_dataset_and_showcase(base_url, downloader, info['folder'], countrydata)
             if dataset:
                 dataset.update_from_yaml()
-                dataset.create_in_hdx(remove_additional_resources=True, hxl_update=False, updated_by_script='HDX Scraper: scrapername', batch=info['batch'])
+                dataset.create_in_hdx(remove_additional_resources=True, hxl_update=False, updated_by_script='HDX Scraper: ScraperName', batch=info['batch'])
                 dataset.generate_resource_view()
                 showcase.create_in_hdx()
                 showcase.add_dataset(dataset)
@@ -58,6 +62,6 @@ if __name__ == '__main__':
     # a value, the Dict containing user agent entries.
     # HDX: It is best to use the HDX Data Team bot's key (https://data.humdata.org/user/luiscape) rather than your own.
     # HDX: That file should have a user_agent parameter and an additional one identifying the scraper as internal to HDX.
-    # facade(main, user_agent_config_yaml=join(expanduser('~'), '.useragents.yml'), user_agent_lookup='hdxscraper-scrapername', project_config_yaml=join('config', 'project_configuration.yml'))
+    # facade(main, user_agent_config_yaml=join(expanduser('~'), '.useragents.yml'), user_agent_lookup=lookup, project_config_yaml=join('config', 'project_configuration.yml'))
 
 
