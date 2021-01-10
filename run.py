@@ -40,14 +40,14 @@ def main():
     with Download(basic_auth_file=join(expanduser("~"), '.scrapernamefile'),
                   extra_params_yaml=join(expanduser("~"), 'scrapernamefile.yml') as downloader:
         base_url = Configuration.read()['base_url']
-        countriesdata = get_countriesdata(base_url, downloader)
+        countries = get_countries(base_url, downloader)
         logger.info('Number of datasets to upload: %d' % len(countriesdata))
         # Loops storing state in folder for resuming broken runs. Also creates batch code for the set of datasets
         # and temporary folder.
-        for info, country in progress_storing_tempdir('scrapername', countriesdata, 'iso3'):
+        for info, country in progress_storing_tempdir('scrapername', countries, 'iso3'):
         # A simple loop can be used instead
-        # for countrydata in countriesdata:
-            dataset, showcase = generate_dataset_and_showcase(base_url, downloader, info['folder'], countrydata)
+        # for country in countries:
+            dataset, showcase = generate_dataset_and_showcase(base_url, downloader, info['folder'], country)
             if dataset:
                 dataset.update_from_yaml()
                 dataset.create_in_hdx(remove_additional_resources=True, hxl_update=False, updated_by_script='HDX Scraper: ScraperName', batch=info['batch'])

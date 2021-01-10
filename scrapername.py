@@ -20,7 +20,7 @@ from slugify import slugify
 logger = logging.getLogger(__name__)
 
 
-def get_countriesdata(base_url, downloader):
+def get_countries(base_url, downloader):
     response = downloader.download('%sfolder/folder/xxx.xxx' % base_url)
     jsonresponse = response.json()
     return jsonresponse['countries_key']
