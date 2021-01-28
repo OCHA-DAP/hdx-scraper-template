@@ -41,7 +41,7 @@ def main():
                   extra_params_yaml=join(expanduser("~"), 'scrapernamefile.yml') as downloader:
         base_url = Configuration.read()['base_url']
         countries = get_countries(base_url, downloader)
-        logger.info('Number of datasets to upload: %d' % len(countriesdata))
+        logger.info('Number of datasets to upload: %d' % len(countries))
         # Loops storing state in folder for resuming broken runs. Also creates batch code for the set of datasets
         # and temporary folder.
         for info, country in progress_storing_tempdir('scrapername', countries, 'iso3'):
