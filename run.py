@@ -11,7 +11,7 @@ from hdx.hdx_configuration import Configuration
 from hdx.utilities.downloader import Download
 from hdx.utilities.path import temp_dir, progress_storing_tempdir
 
-from scrapername import generate_dataset_and_showcase, get_countriesdata
+from scrapername import generate_dataset_and_showcase, get_countries
 
 # Remove 2 lines below if you don't want emails when there are errors.
 # HDX: Remove 2 lines below
