@@ -31,9 +31,30 @@ jobs:
         python run.py
 #    Script output can be committed to the GitHub repository. The below would commit all
 #    out*.json files to the repository.
-#    - uses: stefanzweifel/git-auto-commit-action@v4
-#      name: Commit updated data bundle
+#    - name: Commit updated data bundle
+#      uses: stefanzweifel/git-auto-commit-action@v4
 #      with:
 #        file_pattern: out*.json
 #        commit_message: automatic - Data bundle updated
 #        push_options: '--force'
+#
+#     Alternatively script output can be deployed to a branch.
+#      - name: Deploy to branch
+#        uses: JamesIves/github-pages-deploy-action@3.6.2
+#        with:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#          BRANCH: gh-pages
+#          FOLDER: output
+      - name: Send mail
+        if: failure()
+        uses: dawidd6/action-send-mail@v2
+        with:
+          server_address: ${{secrets.EMAIL_SERVER}}
+          server_port: ${{secrets.EMAIL_PORT}}
+          username: ${{secrets.EMAIL_USERNAME}}
+          password: ${{secrets.EMAIL_PASSWORD}}
+          subject: "FAILED: ${{github.repository}} run job"
+          body: GitHub Actions run job for ${{github.repository}} failed!
+          to: ${{secrets.EMAIL_LIST}}
+          from: ${{secrets.EMAIL_FROM}}
+          content_type: text/html
