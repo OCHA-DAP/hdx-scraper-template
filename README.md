@@ -57,7 +57,7 @@ reads metadata from a Google spreadsheet exported as csv, see:
 ## Text for Scraper's README.md below
 
 ### Collector for ScraperName's Datasets
-[![Build Status](https://github.com/OCHA-DAP/hdx-scraper-scrapername/workflows/build/badge.svg)](https://github.com/OCHA-DAP/hdx-scraper-scrapername/actions?query=workflow%3Abuild) [![Coverage Status](https://coveralls.io/repos/github/OCHA-DAP/hdx-scraper-scrapername/badge.svg?branch=master&ts=1)](https://coveralls.io/github/OCHA-DAP/hdx-scraper-scrapername?branch=master)
+[![Build Status](https://github.com/OCHA-DAP/hdx-scraper-scrapername/workflows/build/badge.svg)](https://github.com/OCHA-DAP/hdx-scraper-scrapername/actions?query=workflow%3Abuild) [![Coverage Status](https://coveralls.io/repos/github/OCHA-DAP/hdx-scraper-scrapername/badge.svg?branch=main&ts=1)](https://coveralls.io/github/OCHA-DAP/hdx-scraper-scrapername?branch=main)
 
 Collector designed to collect ScraperName datasets from the [ScraperName](http://) website 
 and to automatically register datasets on the 
