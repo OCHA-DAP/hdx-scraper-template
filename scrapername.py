@@ -21,8 +21,8 @@ logger = logging.getLogger(__name__)
 
 
 def get_countries(base_url, downloader):
-    response = downloader.download('%sfolder/folder/xxx.xxx' % base_url)
-    jsonresponse = response.json()
+    downloader.download('%sfolder/folder/xxx.xxx' % base_url)
+    jsonresponse = downloader.get_json()
     return jsonresponse['countries_key']
 
 

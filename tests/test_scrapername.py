@@ -29,20 +29,14 @@ class TestScraperName:
 
     @pytest.fixture(scope='function')
     def downloader(self):
-        class Response:
-            @staticmethod
-            def json():
-                pass
-
         class Download:
             @staticmethod
             def download(url):
-                response = Response()
-                if url == 'http://xxx':
-                    def fn():
-                        return {'key': [TestScraperName.countrydata]}
-                    response.json = fn
-                return response
+                pass
+
+            @staticmethod
+            def get_json():
+                return {'key': [TestScraperName.countrydata]}
         return Download()
 
     def test_get_countriesdata(self, downloader):
