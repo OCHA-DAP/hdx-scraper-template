@@ -21,9 +21,9 @@ logger = logging.getLogger(__name__)
 
 
 def get_countries(base_url, downloader):
-    downloader.download('%sfolder/folder/xxx.xxx' % base_url)
+    downloader.download(f"{base_url}folder/folder/xxx.xxx")
     jsonresponse = downloader.get_json()
-    return jsonresponse['countries_key']
+    return jsonresponse["countries_key"]
 
 
 def generate_dataset_and_showcase(base_url, downloader, folder, country):
@@ -31,15 +31,15 @@ def generate_dataset_and_showcase(base_url, downloader, folder, country):
     {
     },
     """
-    countryname = country['name']
-    title = '%s - Economic and Social Indicators' % countryname #  Example title. Include country, but not organisation name in title!
-    logger.info('Creating dataset: %s' % title)
-    name = 'Organisation indicators for %s' % countryname  #  Example name which should be unique so can include organisation name and country
+    countryname = country["name"]
+    title = "%s - Economic and Social Indicators" % countryname #  Example title. Include country, but not organisation name in title!
+    logger.info("Creating dataset: %s" % title)
+    name = "Organisation indicators for %s" % countryname  #  Example name which should be unique so can include organisation name and country
     slugified_name = slugify(name).lower()
     ...
     dataset = Dataset({
-        'name': slugified_name,
-        'title': title,
+        "name": slugified_name,
+        "title": title,
         ...
     })
     dataset.set_maintainer()
@@ -51,19 +51,19 @@ def generate_dataset_and_showcase(base_url, downloader, folder, country):
     dataset.add_tags([])
 
     resource = Resource({
-        'name': title,
-        'url': ,
-        'description':
+        "name": title,
+        "url": ,
+        "description":
     })
-    resource.set_file_type('csv')  # set the file type to eg. csv
+    resource.set_file_type("csv")  # set the file type to eg. csv
     dataset.add_update_resource(resource)
 
     showcase = Showcase({
-        'name': '%s-showcase' % slugified_name,
-        'title':
-        'notes':
-        'url':
-        'image_url':
+        "name": "%s-showcase" % slugified_name,
+        "title":
+        "notes":
+        "url":
+        "image_url":
     })
     showcase.add_tags([])
     return dataset, showcase
