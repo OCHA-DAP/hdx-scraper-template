@@ -4,7 +4,7 @@ version: '0.1'
 services:
 
   scraper:
-    image: unocha/hdx-scraper-scrapername:0.1
+    image: public.ecr.aws/unocha/hdx-scraper-scrapername:0.1
     volumes:
       - "./:/srv"
     working_dir: /srv

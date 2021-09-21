@@ -1,1 +1,1 @@
-# Requirements other than pandas, python-slugify and hdx-python-api which are already in the base image
+# Requirements other than python-slugify and hdx-python-api which are already in the base image
