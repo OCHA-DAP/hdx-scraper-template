@@ -1,5 +1,5 @@
 # Add requirements to docker-requirements.txt except for Pandas which you should uncomment below if you need it!
-python-slugify==5.0.2
+python-slugify==6.1.2
 # Update version below to latest from https://pypi.python.org/pypi/hdx-python-api/
-hdx-python-api==5.3.1
+hdx-python-api==5.6.5
 -r docker-requirements.txt
