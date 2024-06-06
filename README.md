@@ -16,14 +16,14 @@ set up to run on a schedule. For scripts that run for more than 6 hours and/or f
 resuming failed runs in important, Jenkins must be used.
 
 ### GitHub Actions 
-Uses the .github/workflows/python-package.yml file. Set up the environment variables to be 
+Uses the .github/workflows/python-package.yaml file. Set up the environment variables to be 
 passed to your script in that file mapping them from secrets configured in the GitHub 
 repository's UI. You can also set up the cron schedule.
 (The files listed under Jenkins below are not used.)
 
 ### Jenkins
-docker-compose.yml, docker-requirements.yml, Dockerfile, run-dev.sh, run-once-dev.sh and run_env
-are only needed for Jenkins. (.github/workflows/python-package.yml is not used.) 
+docker-compose.yaml, docker-requirements.yaml, Dockerfile, run-dev.sh, run-once-dev.sh and run_env
+are only needed for Jenkins. (.github/workflows/python-package.yaml is not used.) 
 
 ## Best Practices
 It is highly recommended to have a README.md that details what your script does, from where it
@@ -32,7 +32,7 @@ environment variables are needed. An example is shown below the heading "Text fo
 README.md below" 
 
 It is a good idea to set up GitHub Actions for running tests on check in 
-(using the run-python-tests.yml and the GitHub Actions UI to set up any secrets) and to set up [coveralls](https://coveralls.io/) 
+(using the run-python-tests.yaml and the GitHub Actions UI to set up any secrets) and to set up [coveralls](https://coveralls.io/) 
 in the website UI to ensure that tests cover the majority of your code.
 
 It is very helpful to comment your code appropriately especially things that you think might
@@ -66,7 +66,7 @@ and to automatically register datasets on the
 ### Usage
 python run.py
 
-For the script to run, you will need to either pass in your HDX API key as a parameter or have a file called .hdx_configuration.yml in your home directory containing your HDX key eg.
+For the script to run, you will need to either pass in your HDX API key as a parameter or have a file called .hdx_configuration.yaml in your home directory containing your HDX key eg.
 
     hdx_key: "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
     hdx_read_only: false
@@ -83,6 +83,6 @@ For the script to run, you will need to either pass in your HDX API key as a par
     myscraper2:
         user_agent: MY_USER_AGENT2
 
- Note for HDX scrapers: there is a universal .useragents.yml file you should use.
+ Note for HDX scrapers: there is a universal .useragents.yaml file you should use.
 
  Alternatively, you can set up environment variables eg. for production runs: USER_AGENT, HDX_KEY, HDX_SITE, BASIC_AUTH, EXTRA_PARAMS, TEMP_DIR, LOG_FILE_ONLY

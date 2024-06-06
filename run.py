@@ -33,7 +33,7 @@ def main():
     # If you need to add extra parameters to every url, you can use extra_params_yaml and point to a YAML file with
     # key value pairs. Remember to create it on the server!
     with Download(basic_auth_file=join(expanduser("~"), ".scrapernamefile"),
-                  extra_params_yaml=join(expanduser("~"), "scrapernamefile.yml") as downloader:
+                  extra_params_yaml=join(expanduser("~"), "scrapernamefile.yaml")) as downloader:
         base_url = Configuration.read()["base_url"]
         countries = get_countries(base_url, downloader)
         logger.info(f"Number of datasets to upload: {len(countries)}")
@@ -50,13 +50,14 @@ def main():
                 showcase.create_in_hdx()
                 showcase.add_dataset(dataset)
 
+
 if __name__ == "__main__":
-    facade(main, hdx_site="stage", hdx_key="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", user_agent="myorgandproject", project_config_yaml=join("config", "project_configuration.yml"))
-    # HDX: Remember to create .hdx_configuration.yml on your server eg. the ScraperWiki box!
-    # HDX: Use facade below creating or adding to .useragents.yml a key (hdxscraper-scrapername) with a Dict as
+    facade(main, hdx_site="stage", hdx_key="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", user_agent="myorgandproject", project_config_yaml=join("config", "project_configuration.yaml"))
+    # HDX: Remember to create .hdx_configuration.yaml on your server eg. the ScraperWiki box!
+    # HDX: Use facade below creating or adding to .useragents.yaml a key (hdxscraper-scrapername) with a Dict as
     # a value, the Dict containing user agent entries.
     # HDX: It is best to use the HDX Data Team bot"s key (https://data.humdata.org/user/luiscape) rather than your own.
     # HDX: That file should have a user_agent parameter and an additional one identifying the scraper as internal to HDX.
-    # facade(main, user_agent_config_yaml=join(expanduser("~"), ".useragents.yml"), user_agent_lookup=lookup, project_config_yaml=join("config", "project_configuration.yml"))
+    # facade(main, user_agent_config_yaml=join(expanduser("~"), ".useragents.yaml"), user_agent_lookup=lookup, project_config_yaml=join("config", "project_configuration.yaml"))
 
 
