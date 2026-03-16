@@ -1,3 +1,5 @@
+# DEPRECATED - use the [copier template](https://github.com/OCHA-DAP/hdx-scraper-copier).
+
 # Template Usage
 
 Replace scrapername everywhere with your scraper's name eg. worldbank
